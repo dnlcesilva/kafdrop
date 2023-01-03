@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: outside-kafdrop
+  namespace: kafka
+spec:
+  selector:
+    app: kafka-kafdrop-service
+  ports:
+  - protocol: TCP
+    targetPort: 9000
+    port: 30200
+    nodePort: 30200
+  type: NodePort
